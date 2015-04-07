@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>reading speed test</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            font-family: Georgia;
+        }
+        #top {
+            font-family: Helvetica;
+            font-size: .9em;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            padding: 15px 25px;
+            background-color: #0f0;
+        }
+        #main {
+            font-size: 13pt;
+            line-height: 1.6em;
+            margin: 125px 5em;
+        }
+    </style>
+    <script type="text/javascript" src="http://livejs.com/live.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        var counter;
+        timerOn = 0;
+
+        function startTimer() {
+            if (timerOn == 0) {
+                counter = setInterval(onTick, 1000);
+                timerOn = 1;
+            }
+        }
+        startTimer();
+
+        function stopTimer() {
+            if (timerOn == 1) {
+                clearInterval(counter);
+                timerOn = 0;
+            }
+        }
+
+        function onTick() {
+            $('#counter').val(+$('#counter').val() + 1);
+            $('#wpm').text(Math.floor($('#wordnumber').text() / $('#counter').val() * 60));
+            $('#progress').text(Math.floor($('#wordnumber').text() * 1000 / $('p span').length) / 10);
+        }
+
+        $(function() {
+            $('#source').change(loadSource);
+        });
+
+        function loadSource() {
+            $('#main').load($('#source').val() + ' p', postLoad);
+        }
+
+        function postLoad() {
+            // wrap words in spans
+            $('p').each(function() {
+                var $this = $(this);
+                $this.html($this.text().replace(/\b(\w+)\b/g, "<span>$1</span>"));
+            });
+
+            // bind to each span
+            $('p span').hover(
+                function() {
+                    $('#wordnumber').text($(this).index('p span') + 1);
+                    $('#word').text($(this).text());
+                }
+            );
+        }
+    </script>
+    </head>
+<body>
+
+<div id="top">
+Load URL: <input id="source" /><br />
+You are on word <span id="wordnumber"></span>: <span id="word"></span>.<br />
+You are <span id="progress">0</span>% of the way through the text.<br />
+Timer: <input id="counter" value="0" size="5"/>. <span id="starttimer" onclick="startTimer();">(start)</span> <span id="stoptimer" onclick="stopTimer();">(stop)</span><br />
+Rate: <span id="wpm"></span> words per minute.
+</div>
+
+<div id="main">
+
+
+</div>
+</body>
+</html>
