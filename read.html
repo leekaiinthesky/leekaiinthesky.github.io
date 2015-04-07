@@ -48,6 +48,7 @@
             $('#counter').val(+$('#counter').val() + 1);
             $('#wpm').text(Math.floor($('#wordnumber').text() / $('#counter').val() * 60));
             $('#progress').text(Math.floor($('#wordnumber').text() * 1000 / $('p span').length) / 10);
+            $('#remaining').text(Math.floor(($('p span').length - $('#wordnumber').text()) / $('#wpm').text()));
         }
 
         $(function() {
@@ -87,12 +88,12 @@
         <td style="text-align: right;">You are on word <span id="wordnumber">0</span>: <span id="word">Load a URL</span>.</td>
     </tr>
     <tr>
-        <td>Timer: <input id="counter" value="0" size="5"/> <a href="#" id="starttimer" onclick="startTimer();">(start)</a> <a href="#" id="stoptimer" onclick="stopTimer();">(stop)</a></td>
+        <td>Timer: <input id="counter" value="0" size="5"/> <a id="starttimer" onclick="startTimer();">(start)</a> <a id="stoptimer" onclick="stopTimer();">(stop)</a></td>
         <td style="text-align: right;">You are <span id="progress">0</span>% of the way through the text.</td>
     </tr>
     <tr>
-        <td></td>
-        <td style="text-align: right;">Rate: <span id="wpm"></span> words per minute.</td>
+        <td>Rate: <span id="wpm"></span> words per minute.</td>
+        <td style="text-align: right;">Estimated minutes remaining: <span id="remaining"></span></td>
     </tr>
 </table>
 </div>
