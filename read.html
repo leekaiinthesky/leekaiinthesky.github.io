@@ -20,7 +20,6 @@
             padding: 25px;
         }
         #main {
-            font-size: 13pt;
             line-height: 1.6em;
             margin: 150px 5em;
         }
@@ -58,14 +57,60 @@
         function loadSource() {
             stopTimer();
             $('#counter').val(0);
-            $('#main').load($('#source').val() + ' p', postLoad);
+
+            inputString = $('#source').val()
+            if (inputString.substring(0, 4) == 'http') {
+                $('#main').load(inputString + ' p', postLoad);
+            } else {
+                $('#main').html($(inputString).find('p').each(function(index, element) {
+                    if ($(this).attr('class') != undefined) {
+                        $(this).html('<div style="font-size: 1em; padding-left: 5em;"><i>' + $(this).attr('class') + ': ' + $(this).html() + '</i></div>');
+                    }
+                }))
+                $('#source').val('');
+                postLoad();
+            }
         }
+
+        function spanWords(obj) {
+            var s = '';
+            for (var i = 0; i < obj.contents().length; i++) {
+                if (obj.contents()[i].nodeType == 3) {
+                    s += obj.contents()[i].nodeValue.replace(/\b(\w+)\b/g, "<span>$1</span>");
+                    // words = obj.contents()[i].nodeValue.split(' ');
+                    // for (var j = 0; j < words.length; j++) {
+                    //     s += '<span>' + words[j] + '</span> ';
+                    // }
+                } else if (obj.contents()[i].nodeType == 1) {
+                    el = $(obj.contents()[i]);
+                    el.html(spanWords(el));
+                    s += el.prop('outerHTML');
+                }
+            }
+            return s;
+        };
 
         function postLoad() {
             // wrap words in spans
             $('p').each(function() {
-                var $this = $(this);
-                $this.html($this.text().replace(/\b(\w+)\b/g, "<span>$1</span>"));
+                if ($(this).attr('class') == undefined) {
+
+                    $(this).html(spanWords($(this)));
+                    // for (var i = 0; i < $(this).contents().length; i++) {
+                    //     console.log($(this).contents()[i])
+                    // }
+
+                    // var text = $(this).html().split(' '),
+                    //     len = text.length,
+                    //     result = []; 
+
+                    // for( var i = 0; i < len; i++ ) {
+                    //     result[i] = '<span>' + text[i] + '</span>';
+                    // }
+                    // $(this).html(result.join(' '));
+                    // // var $this = $(this);
+                    // // $this.html($this.text().replace(/\b(\w+)\b/g, "<span>$1</span>"));
+                }
             });
 
             // bind to each span
@@ -85,8 +130,8 @@
 <div id="top">
 <table>
     <tr>
-        <td>Load URL: <input id="source" size="40" /></td>
-        <td style="text-align: right;">You are on word <span id="wordnumber">0</span>: <span id="word">Load a URL</span>.</td>
+        <td>Load HTML: <input id="source" size="40" /></td>
+        <td style="text-align: right;">You are on word <span id="wordnumber">0</span>: <span id="word">Load HTML or a URL</span>.</td>
     </tr>
     <tr>
         <td>Timer: <input id="counter" value="0" size="5"/> <a href="#startTimer" id="starttimer" onclick="startTimer();">(start)</a> <a href="#stopTimer" id="stoptimer" onclick="stopTimer();">(stop)</a></td>
