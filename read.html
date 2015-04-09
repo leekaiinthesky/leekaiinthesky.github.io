@@ -30,6 +30,13 @@
         var counter;
         timerOn = 0;
 
+        function onTick() {
+            $('#counter').val(+$('#counter').val() + 1);
+            $('#wpm').text(Math.floor($('#wordnumber').text() / $('#counter').val() * 60));
+            $('#progress').text(Math.floor($('#wordnumber').text() * 1000 / $('p span').length) / 10);
+            $('#remaining').text(Math.floor(($('p span').length - $('#wordnumber').text()) / $('#wpm').text()));
+        }
+
         function startTimer() {
             if (timerOn == 0) {
                 counter = setInterval(onTick, 1000);
@@ -44,13 +51,6 @@
             }
         }
 
-        function onTick() {
-            $('#counter').val(+$('#counter').val() + 1);
-            $('#wpm').text(Math.floor($('#wordnumber').text() / $('#counter').val() * 60));
-            $('#progress').text(Math.floor($('#wordnumber').text() * 1000 / $('p span').length) / 10);
-            $('#remaining').text(Math.floor(($('p span').length - $('#wordnumber').text()) / $('#wpm').text()));
-        }
-
         $(function() {
             $('#source').change(loadSource);
         });
@@ -59,7 +59,6 @@
             stopTimer();
             $('#counter').val(0);
             $('#main').load($('#source').val() + ' p', postLoad);
-            startTimer();
         }
 
         function postLoad() {
@@ -76,6 +75,8 @@
                     $('#word').text($(this).text());
                 }
             );
+
+            startTimer();
         }
     </script>
     </head>
@@ -88,7 +89,7 @@
         <td style="text-align: right;">You are on word <span id="wordnumber">0</span>: <span id="word">Load a URL</span>.</td>
     </tr>
     <tr>
-        <td>Timer: <input id="counter" value="0" size="5"/> <a id="starttimer" onclick="startTimer();">(start)</a> <a id="stoptimer" onclick="stopTimer();">(stop)</a></td>
+        <td>Timer: <input id="counter" value="0" size="5"/> <a href="#startTimer" id="starttimer" onclick="startTimer();">(start)</a> <a href="#stopTimer" id="stoptimer" onclick="stopTimer();">(stop)</a></td>
         <td style="text-align: right;">You are <span id="progress">0</span>% of the way through the text.</td>
     </tr>
     <tr>
