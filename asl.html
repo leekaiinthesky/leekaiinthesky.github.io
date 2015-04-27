@@ -3,26 +3,36 @@
 <head>
   <title>Wang ASL</title>
   <style type="text/css">
-    body {
-      text-align: center;
+    td {
+      padding: 0;
+    }
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      line-height: 0;
     }
   </style>
 </head>
 <body>
 
-  <div id="container">
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="playerid0"></div>
-    <div id="playerid1"></div>
-    <div id="playerid2"></div>
-    <div id="playerid3"></div>
-    <div id="playerid4"></div>
-    <div id="playerid5"></div>
-    <div id="playerid6"></div>
-    <div id="playerid7"></div>
-    <div id="playerid8"></div>
-    <div id="playerid9"></div>
-  </div>
+  <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+  <table>
+    <tr>
+      <td><div id="playerid0"></div></td>
+      <td><div id="playerid1"></div></td>
+      <td><div id="playerid2"></div></td>
+    </tr>
+    <tr>
+      <td><div id="playerid3"></div></td>
+      <td><div id="playerid4"></div></td>
+      <td><div id="playerid5"></div></td>
+    </tr>
+    <tr>
+      <td><div id="playerid6"></div></td>
+      <td><div id="playerid7"></div></td>
+      <td><div id="playerid8"></div></td>
+    </tr>
+  </table>
 
   <script>
     function shuffle(array) {
