@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wang ASL</title>
+  <title>Wang ASL Wall</title>
   <style type="text/css">
     td {
       padding: 0;
@@ -21,16 +21,25 @@
       <td><div id="playerid0"></div></td>
       <td><div id="playerid1"></div></td>
       <td><div id="playerid2"></div></td>
+      <td><div id="playerid3"></div></td>
     </tr>
     <tr>
-      <td><div id="playerid3"></div></td>
       <td><div id="playerid4"></div></td>
       <td><div id="playerid5"></div></td>
-    </tr>
-    <tr>
       <td><div id="playerid6"></div></td>
       <td><div id="playerid7"></div></td>
+    </tr>
+    <tr>
       <td><div id="playerid8"></div></td>
+      <td><div id="playerid9"></div></td>
+      <td><div id="playerid10"></div></td>
+      <td><div id="playerid11"></div></td>
+    </tr>
+    <tr>
+      <td><div id="playerid12"></div></td>
+      <td><div id="playerid13"></div></td>
+      <td><div id="playerid14"></div></td>
+      <td><div id="playerid15"></div></td>
     </tr>
   </table>
 
@@ -54,7 +63,8 @@
       return array;
     }
 
-    var videos = ['TtwB7qoxehI', 'BDbBnTG-R-A', 'lgFVzXtf9g4', 'MMlPuucaLYw', 'a04y1iUjK4c', 'tDl5hH0YV3s', 'qBIiLahr8yk', 'HjbcOjlu-3c', '2KJuW_NZrjQ'];//, '8zKZKa2w7vA'];
+    var videos = ['TtwB7qoxehI', 'BDbBnTG-R-A', 'lgFVzXtf9g4', 'MMlPuucaLYw', 'a04y1iUjK4c', 'tDl5hH0YV3s', 'qBIiLahr8yk', 'HjbcOjlu-3c', '2KJuW_NZrjQ', '8zKZKa2w7vA', 'tkZI8p9PpyA', 'x_NiqKtuWic', 'eoZAlLLQmnQ', 'T7UhhBRnvUY'];
+
     videos = shuffle(videos);
 
     // 2. This code loads the IFrame Player API code asynchronously.
@@ -70,7 +80,7 @@
     function onYouTubeIframeAPIReady() {
       for (i = 0; i < videos.length; ++i) {
         player = new YT.Player('playerid' + i.toString(), {
-          height: '210',
+          height: '200',
           width: '290',
           videoId: videos[i],
           playerVars: { 'loop': true },
