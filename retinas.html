@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Retinas</title>
+  <style type="text/css">
+    td {
+      padding: 0;
+    }
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      line-height: 0;
+    }
+  </style>
+</head>
+<body>
+<h3>twos</h3>
+<div id="twos"></div><br /><br />
+<h3>threes</h3>
+<div id="threes"></div><br /><br />
+<h3>fours</h3>
+<div id="fours"></div><br /><br />
+
+<script>
+var node;
+
+var twos = ['15_right', '30_right', '40_left', '51_left', '54_left', '54_right', '78_left', '78_right', '79_left'];
+for (i = 0; i < twos.length; ++i) {
+    node = document.createElement('img');
+    node.src = 'twos/' + twos[i] + '.jpeg';
+    node.width = '420';
+    document.getElementById('twos').appendChild(node);
+}
+
+var threes = ['99_left', '99_right', '163_left', '163_right', '328_right', '352_left', '352_right', '391_right', '458_left'];
+for (i = 0; i < threes.length; ++i) {
+    node = document.createElement('img');
+    node.src = 'threes/' + threes[i] + '.jpeg';
+    node.width = '420';
+    document.getElementById('threes').appendChild(node);
+}
+
+var fours = ['16_left', '16_right', '217_left', '217_right', '294_left', '294_right', '326_left', '326_right', '367_left'];
+for (i = 0; i < fours.length; ++i) {
+    node = document.createElement('img');
+    node.src = 'fours/' + fours[i] + '.jpeg';
+    node.width = '420';
+    document.getElementById('fours').appendChild(node);
+}
+</script>
+</body>
+</html>
