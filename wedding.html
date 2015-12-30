@@ -14,16 +14,23 @@
     <![endif]-->
     <style type="text/css">
       body {
+        padding-top: 50px;
         min-height: 1500px;
-        padding-top: 70px;
         text-align: center;
       }
       h2 {
-        padding-top: 70px;
         font-size: 1.5em;
       }
-      #navbar {
+      .nav {
+        float: none;
         display: inline-block;
+        vertical-align: top;
+      }
+      a.anchor {
+        display: block;
+        position: relative;
+        top: -70px;
+        visibility: hidden;
       }
     </style>
     <script type="text/javascript" src="http://livejs.com/live.js"></script>
@@ -31,50 +38,38 @@
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
-        <div id="navbar">
           <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
+            <li><a href="#home">Home</a></li>
             <li><a href="#schedule">Schedule</a></li>
             <li><a href="#getting-in">Getting In and Staying Here</a></li>
             <li><a href="#registry">Registry</a></li>
             <li><a href="#rsvp">RSVP</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-      <h1>Breanna + Lee-kai's Wedding</h1>
+      <h1><a class="anchor" id="home"></a>Breanna + Lee-kai's Wedding</h1>
       <div>March 18, 2016 – March 20, 2016</div>
 
       <p>We can't wait to celebrate with you all!</p>
 
-      <h2 id="schedule">Schedule</h2>
+      <h2><a class="anchor" id="schedule"></a>Schedule</h2>
       <img src="marcela-back.png">
 
-      <h2 id="getting-in">Getting In and Staying Here</h2>
+      <h2><a class="anchor" id="getting-in"></a>Getting In and Staying Here</h2>
 
-
-      <h2 id="registry">Registry</h2>
+      <h2><a class="anchor" id="registry"></a>Registry</h2>
       <p>You can find us registered on:<br />
         Amazon<br />
         Crate &amp; Barrel<br /></p>
 
-      <h2 id="rsvp">RSVP</h2>
+      <h2><a class="anchor" id="rsvp"></a>RSVP</h2>
       <p>Please respond by February 20, 2016, by filling out this form: <a href="http://goo.gl/forms/fn33hKDOZ6">RSVP form</a>.</p>
 
       <h2>Bottom Space</h2>
       <p>Image, thanks, or something.</p>
       <p>Add a favico</p>
     </div> <!-- /container -->
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
