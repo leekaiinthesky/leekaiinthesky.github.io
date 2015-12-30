@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hsu family tree</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.3.5/tabletop.min.js"></script>
+    <script type="text/javascript">
+        var spreadsheetKey = '1J6de0Swosz8Jr-P14nDQIWyPQFiddomf7tZ6QKW1u68';
+
+        window.onload = function() {
+            Tabletop.init({key: spreadsheetKey, callback: processData, simpleSheet: true});
+        };
+
+        function processData(data, tabletop) {
+            for (row in data) {
+                if (data[row]['id'].substring(0, 4) == '1F2M') {
+                    console.log(data[row]);
+                    if (data[row]['preferredenglishname'] != '') {
+                        $('#main').html($('#main').html() + data[row]['preferredenglishname'] + '<br />');
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="main"></div>
+</body>
+</html>
