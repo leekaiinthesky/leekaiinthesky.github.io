@@ -51,17 +51,18 @@
       }
       #main-image {
         margin-top: 175px;
+        max-width: 620px;
       }
       @media screen and (min-width: 768px) {
         #main-image {
-          margin-top: 10px;
+          margin-top: 15px;
         }
         a.anchor {
           top: -70px;
         }
       }
       #content {
-        width: 640px;
+        max-width: 640px;
       }
     </style>
     <script type="text/javascript" src="http://livejs.com/live.js"></script>
@@ -77,10 +78,12 @@
           </ul>
     </nav>
 
-    <a class="anchor" id="home"></a><img id="main-image" src="us.jpg" width="600" />
-    <h1><a class="anchor"></a>Breanna + Lee-kai's Wedding</h1>
-    <div>March 18, 2016 – March 20, 2016</div>
-    <p>We can't wait to celebrate with all of you!</p>
+    <div class="container">
+      <a class="anchor" id="home"></a><img id="main-image" src="us.jpg" width="100%" />
+      <h1><a class="anchor"></a>Breanna + Lee-kai's Wedding</h1>
+      <div>March 18, 2016 – March 20, 2016</div>
+      <p>We can't wait to celebrate with all of you!</p>
+    </div>
 
     <div class="container" id="content">
       <h2><a class="anchor" id="events"></a>Events</h2>
