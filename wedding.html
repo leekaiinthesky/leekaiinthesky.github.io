@@ -11,19 +11,14 @@
         text-align: center;
         background-color: #fee;
       }
-      a.anchor {
-        display: block;
-        position: relative;
-        visibility: hidden;
+      nav {
+        display: none;
       }
-      .nav {
+      .navbar-nav {
         float: none;
         display: inline-block;
         vertical-align: top;
-      }
-      .navbar {
         font-size: 1.2em;
-        display: none;
       }
       .navbar-inverse .navbar-nav > li > a {
         color: #ccc;
@@ -32,14 +27,10 @@
         color: #fbb;
         text-decoration: underline;
       }
-      .panel-heading h3 {
-        margin-bottom: 3px;
-      }
-      .panel > .panel-heading {
-          background-image: none;
-      }
-      .panel-body {
-        text-align: left;
+      a.anchor {
+        display: block;
+        position: relative;
+        visibility: hidden;
       }
       h1 {
         font-size: 3em;
@@ -48,29 +39,45 @@
         margin-top: 20px;
         font-size: 1.6em;
       }
+      .panel-heading h3 {
+        margin-bottom: 3px;
+        font-size: 1.1em;
+      }
+      .panel-body {
+        text-align: left;
+      }
+      #getting-in-body h3 {
+        margin-top: 5px;
+        font-size: 1.1em;
+      }
+      a.attraction {
+        font-weight: bold;
+      }
+      #content {
+        max-width: 640px;
+      }
       #main-image {
-        margin-top: 18px;
+        margin-top: 15px;
         max-width: 620px;
       }
+      #marcela-map {
+        max-width: 420px;
+      }
       @media screen and (min-width: 768px) {
-        body {
-          padding-top: 45px;
+        #main-image {
+          margin-top: 58px;
         }
-        .navbar {
+        nav {
           display: inline-block;
         }
         a.anchor {
           top: -70px;
         }
-      }
-      #content {
-        max-width: 640px;
-      }
-      #marcela-map {
-        max-width: 420px;
+        .endnote {
+          min-height: 70vh;
+        }
       }
     </style>
-    <script type="text/javascript" src="http://livejs.com/live.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -118,7 +125,7 @@
           627 South Carondelet St.<br />
           Los Angeles, CA 90057<br />
           <a href="">Map to venue</a><br />
-          <a href="https://www.patinagroup.com/cafe-pinot">Venue website</a><br />
+          <a href="http://www.carondelethouse.com/">Venue website</a><br />
           <br />
           <em>Formal dress. Carondelet House is two miles from the hotel, car/Uber recommended. Parking structure across the street from venue offers parking for $6. </em>
         </div>
@@ -131,7 +138,7 @@
           251 South Olive St.<br />
           Los Angeles, CA 90071<br />
           <a href="">Map to venue</a><br />
-          <a href="https://www.patinagroup.com/cafe-pinot">Venue website</a><br />
+          <a href="http://www.omnihotels.com/hotels/los-angeles-california-plaza/dining/grand-cafe">Venue website</a><br />
           <br />
           <em>Casual dress. Brunch is buffet style. We'll be there at 11 a.m., but arrive anytime you please before 1 p.m.</em>
         </div>
@@ -139,35 +146,34 @@
 
       <h2><a class="anchor" id="getting-in"></a>Getting In and Staying Here</h2>
       <div class="panel panel-default">
-        <div class="panel-body">
-          <h3 class="h5">Omni Hotel</h3>
-          <p>We are staying at Omni Los Angeles Hotel at California Plaza and have reserved a block rate for rooms. It is walking distance to our welcome dinner, and the Sunday brunch will be held at the Grand Café in the hotel. Please consider staying here with us! To book a room at Omni Hotel, visit:</p>
+        <div id="getting-in-body" class="panel-body">
+          <h3>Omni Hotel</h3>
+          <p>We are staying at Omni Los Angeles Hotel at California Plaza and have reserved a block rate for rooms. It is walking distance to our welcome dinner, and the Sunday brunch will be held at the Grand Café in the hotel. Please consider staying here with us! To book a room, visit:</p>
 
-          <p>Getting there:
-          http://www.omnihotels.com/hotels/los-angeles-california-plaza/property-details/directions</p>
+          <p>Getting there: <a href="http://www.omnihotels.com/hotels/los-angeles-california-plaza/property-details/directions">http://www.omnihotels.com/hotels/los-angeles-california-plaza/property-details/directions</a></p>
 
           <p>Parking rates? Say what the block rates are</p>
           
           <hr />
-          <h3 class="h5">Activities and attractions within walking distance of hotel</h3>
-          <a style="font-weight: bold;" href="http://www.moca.org/visit/grand-ave">The Museum of Contemporary Art</a> (next door)<br />
-          <a style="font-weight: bold;" href="http://www.thebroad.org/">The Broad Museum</a> (1 block)<br />
-          <a style="font-weight: bold;" href="http://www.musiccenter.org/visit/Exploring-the-Center/">The Walt Disney Concert Hall</a> (1 block)<br />
-          <a style="font-weight: bold;" href="https://www.laconservancy.org/tours">L.A. Conservancy Walking Tours</a> (some tours leave from Pershing Square, 0.3 miles)<br />
-          <a style="font-weight: bold;" href="http://www.yelp.com/biz/the-rooftop-at-the-standard-downtown-la-los-angeles?osq=standard+hotel&search_key=21486">The Standard Hotel and Rooftop Bar</a> (0.6 miles)<br />
+          <h3>Activities and attractions within walking distance of hotel</h3>
+          <a class="attraction" href="http://www.moca.org/visit/grand-ave">The Museum of Contemporary Art</a> (next door)<br />
+          <a class="attraction" href="http://www.thebroad.org/">The Broad Museum</a> (1 block)<br />
+          <a class="attraction" href="http://www.musiccenter.org/visit/Exploring-the-Center/">The Walt Disney Concert Hall</a> (1 block)<br />
+          <a class="attraction" href="https://www.laconservancy.org/tours">L.A. Conservancy Walking Tours</a> (some tours leave from Pershing Square, 0.3 miles)<br />
+          <a class="attraction" href="http://www.yelp.com/biz/the-rooftop-at-the-standard-downtown-la-los-angeles">The Standard Hotel and Rooftop Bar</a> (0.6 miles)<br />
 
           <hr />
-          <h3 class="h5">Other suggested attractions in L.A.</h3>
+          <h3>Other suggested attractions in L.A.</h3>
 
-          <a style="font-weight: bold;" href="http://www.getty.edu/visit/">Getty Center and Getty Villa</a> (museums, sculptures, outdoor gardens)<br />
-          <a style="font-weight: bold;" href="">LACMA</a> and <a style="font-weight: bold;" href="">La Brea Tar Pits</a><br />
-          <a style="font-weight: bold;" href="">Runyon Canyon</a> (hiking with a panoramic view of the city)<br />
-          <a style="font-weight: bold;" href="">Griffith Park</a> (hiking with view of the Hollywood sign, downtown LA, Griffith Observatory)<br />
-          <a style="font-weight: bold;" href="">L.A. Live</a> (STAPLES Center, Grammy Museum, restaurants, bowling alley)<br />
-          <a style="font-weight: bold;" href="">The Grove and Farmer's Market</a> (open-air shopping center with food stalls)<br />
-          <a style="font-weight: bold;" href="">Santa Monica Pier</a><br />
-          <a style="font-weight: bold;" href="">Abbot Kinney</a> and Venice Beach (trendy cafes, boutiques, galleries)<br />
-          <a style="font-weight: bold;" href="">Venice Canals</a><br />
+          <a class="attraction" href="http://www.getty.edu/visit/">Getty Center and Villa</a> – museums, sculptures, outdoor gardens<br />
+          <a class="attraction" href="http://www.lacma.org/">LACMA</a> and <a class="attraction" href="http://www.tarpits.org/la-brea-tar-pits">La Brea Tar Pits</a> – contemporary art and adjacent archeological site<br />
+          <a class="attraction" href="http://www.yelp.com/biz/runyon-canyon-park-los-angeles-2">Runyon Canyon</a> – rigorous hiking with a panoramic view of the city<br />
+          <a class="attraction" href="http://www.yelp.com/biz/griffith-observatory-hike-los-angeles">Griffith Park</a> – hiking with a view of the Hollywood sign, downtown L.A., Griffith Observatory<br />
+          <a class="attraction" href="http://www.lalive.com/">L.A. Live</a> – Staples Center, Grammy Museum, restaurants, bowling<br />
+          <a class="attraction" href="http://www.yelp.com/biz/the-grove-los-angeles-7">The Grove and Farmer's Market</a> – open-air shopping center with food stalls<br />
+          <a class="attraction" href="http://www.yelp.com/biz/santa-monica-pier-santa-monica">Santa Monica Pier</a> – beach and boardwalk<br />
+          <a class="attraction" href="http://www.yelp.com/biz/abbot-kinney-venice-2">Abbot Kinney</a> and <a class="attraction" href="http://www.yelp.com/biz/venice-beach-venice">Venice Beach</a> – trendy cafes, boutiques, galleries<br />
+          <a class="attraction" href="http://www.yelp.com/biz/venice-canals-venice-2">Venice Canal Historic District</a> – built in 1905, modeled after Venice, Italy<br />
         </div>
       </div>
 
@@ -178,8 +184,8 @@
           <div class="panel panel-default">
             <div class="panel-body" style="text-align: center;">
               You can find us registered on:<br />
-              Amazon.com<br />
-              Crate &amp; Barrel
+              <a href="https://www.amazon.com/registry/wedding/PEUFWRX3UAXF">Amazon.com</a><br />
+              <a href="http://www.crateandbarrel.com/gift-registry/breanna-chia-and-lee-kai-wang/r5440724">Crate &amp; Barrel</a>
             </div>
           </div>
         </div>
@@ -202,7 +208,7 @@
         <div class="col-xs-2"></div>
       </div>
 
-      <h2 style="min-height: 70vh;" class="h1"><span class="glyphicon glyphicon-heart"></span></h2>
+      <h2 class="h1 endnote"><span class="glyphicon glyphicon-heart"></span></h2>
     </div> <!-- /container -->
   </body>
 </html>
