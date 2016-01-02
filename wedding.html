@@ -8,14 +8,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <style type="text/css">
       body {
-        padding-top: 50px;
         text-align: center;
         background-color: #fee;
       }
       a.anchor {
         display: block;
         position: relative;
-        top: -235px;
         visibility: hidden;
       }
       .nav {
@@ -25,6 +23,7 @@
       }
       .navbar {
         font-size: 1.2em;
+        display: none;
       }
       .navbar-inverse .navbar-nav > li > a {
         color: #ccc;
@@ -50,12 +49,15 @@
         font-size: 1.6em;
       }
       #main-image {
-        margin-top: 175px;
+        margin-top: 18px;
         max-width: 620px;
       }
       @media screen and (min-width: 768px) {
-        #main-image {
-          margin-top: 15px;
+        body {
+          padding-top: 45px;
+        }
+        .navbar {
+          display: inline-block;
         }
         a.anchor {
           top: -70px;
