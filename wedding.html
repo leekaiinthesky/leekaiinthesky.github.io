@@ -10,11 +10,12 @@
       body {
         padding-top: 50px;
         text-align: center;
+        background-color: #fee;
       }
       a.anchor {
         display: block;
         position: relative;
-        top: -70px;
+        top: -235px;
         visibility: hidden;
       }
       .nav {
@@ -29,24 +30,37 @@
         color: #ccc;
       }
       .navbar-inverse .navbar-nav > li > a:hover {
-        color: #ccc;
+        color: #fbb;
         text-decoration: underline;
       }
       .panel-heading h3 {
         margin-bottom: 3px;
       }
+      .panel > .panel-heading {
+          background-image: none;
+      }
       .panel-body {
         text-align: left;
+      }
+      h1 {
+        font-size: 3.2em;
       }
       h2 {
         margin-top: 20px;
         font-size: 1.6em;
       }
       #main-image {
-        margin-top: 10px;
+        margin-top: 175px;
+      }
+      @media screen and (min-width: 768px) {
+        #main-image {
+          margin-top: 10px;
+        }
+        a.anchor {
+          top: -70px;
+        }
       }
       #content {
-        width: 960px;
       }
     </style>
     <script type="text/javascript" src="http://livejs.com/live.js"></script>
@@ -139,25 +153,25 @@
               <p>Parking rates? Say what the block rates are</p>
               
               <hr />
-              <h3 class="h5">Activities and attractions in walking distance of hotel</h3>
-              The Museum of Contemporary Art (next door)<br />
-              The Broad Museum (1 block)<br />
-              The Walt Disney Concert Hall (1 block)<br />
-              L.A. Conservancy Walking Tours (some tours leave from Pershing Square, 0.3 miles)<br />
-              The Standard Hotel and Rooftop Bar (0.6 miles)<br />
+              <h3 class="h5">Activities and attractions within walking distance of hotel</h3>
+              <a style="font-weight: bold;" href="http://www.moca.org/visit/grand-ave">The Museum of Contemporary Art</a> (next door)<br />
+              <a style="font-weight: bold;" href="http://www.thebroad.org/">The Broad Museum</a> (1 block)<br />
+              <a style="font-weight: bold;" href="http://www.musiccenter.org/visit/Exploring-the-Center/">The Walt Disney Concert Hall</a> (1 block)<br />
+              <a style="font-weight: bold;" href="https://www.laconservancy.org/tours">L.A. Conservancy Walking Tours</a> (some tours leave from Pershing Square, 0.3 miles)<br />
+              <a style="font-weight: bold;" href="http://www.yelp.com/biz/the-rooftop-at-the-standard-downtown-la-los-angeles?osq=standard+hotel&search_key=21486">The Standard Hotel and Rooftop Bar</a> (0.6 miles)<br />
 
               <hr />
-              <h3 class="h5">Other suggested attractions in LA</h3>
+              <h3 class="h5">Other suggested attractions in L.A.</h3>
 
-              Getty Center and Getty Villa, museums, sculptures, outdoor gardens<br />
-              LACMA and La Brea Tar Pits<br />
-              Runyon Canyon, semi-rigorous to rigorous hiking trails with views of the city<br />
-              Griffith Park, hiking trails of varying difficulty with view of the Hollywood sign, downtown LA, and the Griffith Observatory<br />
-              L.A. Live, includes STAPLES Center, Grammy Museum, restaurants, bowling alley, etc.<br />
-              The Grove and Farmer’s Market, outdoor shopping center with food stalls<br />
-              Santa Monica Pier<br />
-              Abbot Kinney in Venice Beach, pedestrian-friendly street with trendy cafes, boutiques, galleries, etc.<br />
-              Venice Canals<br />
+              <a style="font-weight: bold;" href="http://www.getty.edu/visit/">Getty Center and Getty Villa</a> (museums, sculptures, outdoor gardens)<br />
+              <a style="font-weight: bold;" href="">LACMA</a> and <a style="font-weight: bold;" href="">La Brea Tar Pits</a><br />
+              <a style="font-weight: bold;" href="">Runyon Canyon</a> (hiking with a panoramic view of the city)<br />
+              <a style="font-weight: bold;" href="">Griffith Park</a> (hiking with view of the Hollywood sign, downtown LA, Griffith Observatory)<br />
+              <a style="font-weight: bold;" href="">L.A. Live</a> (STAPLES Center, Grammy Museum, restaurants, bowling alley)<br />
+              <a style="font-weight: bold;" href="">The Grove and Farmer's Market</a> (open-air shopping center with food stalls)<br />
+              <a style="font-weight: bold;" href="">Santa Monica Pier</a><br />
+              <a style="font-weight: bold;" href="">Abbot Kinney</a> and Venice Beach (trendy cafes, boutiques, galleries)<br />
+              <a style="font-weight: bold;" href="">Venice Canals</a><br />
 
             </div>
           </div>
@@ -166,17 +180,35 @@
       </div>
 
       <h2><a class="anchor" id="registry"></a>Registry</h2>
-      <p>You can find us registered on:<br />
-        Amazon.com<br />
-        Crate &amp; Barrel<br /></p>
+      <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+          <div class="panel panel-default">
+            <div class="panel-body" style="text-align: center;">
+              You can find us registered on:<br />
+              Amazon.com<br />
+              Crate &amp; Barrel
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4"></div>
+      </div>
 
       <h2 style="margin-top: 30px;"><a class="anchor" id="rsvp"></a>Répondez, s'il vous plaît</h2>
-      <p>Please respond by February 20, 2016, here:&nbsp;
-
-      <button type="button" class="btn btn-primary">
-        RSVP
-      </button>
-      </p>
+      <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6">
+          <div class="panel panel-default">
+            <div class="panel-body" style="text-align: center;">
+              Please respond here by February 20, 2016:&nbsp;
+                <button type="button" class="btn btn-primary">
+                  RSVP
+                </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3"></div>
+      </div>
 
       <h2 style="min-height: 90vh;" class="h1"><span class="glyphicon glyphicon-heart"></span></h2>
     </div> <!-- /container -->
